@@ -20,7 +20,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: process.env.GATSBY_WPGRAPHQL_URL || "https://dashboard.home-cleaner.ch/",
+        url: process.env.GATSBY_WPGRAPHQL_URL || "http://52.45.136.42/graphql",
       },
     },
     'gatsby-transformer-sharp',
