@@ -50,6 +50,20 @@ exports.createPages = async ({ graphql, actions }) => {
                   ... on WpPage_Sections_Sections_Form {
                     fieldGroupName
                   }
+                  ... on WpPage_Sections_Sections_Image {
+                    fieldGroupName
+                    image {
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(
+                            layout: FULL_WIDTH
+                            placeholder: BLURRED
+                            formats: [AUTO, WEBP, AVIF]
+                          )
+                        }
+                      }
+                    }
+                  }
 
 
           

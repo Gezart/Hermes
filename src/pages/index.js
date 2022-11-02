@@ -20,7 +20,7 @@ export default function Home({data}) {
     <Seo title="Home - Home Cleaner" description="Clean your home with Home Cleaner" keywords="Home Cleaner, Cleaning"/>
     <Banner {...banner}/>
       {
-          sections.map((section, index) => {
+          sections?.map((section, index) => {
               const typeName = section.__typename;
               switch(typeName){
               case 'WpPage_Sections_Sections_Text':

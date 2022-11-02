@@ -709,18 +709,13 @@ body.hidden {
   color: #fff;
 }
 
-.images {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  grid-gap: 32px;
+.image {
+  margin-top: 50px;
 }
 
-@media (min-width: 575px) {
-  .images {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+@media (min-width: 991px) {
+  .image {
+    margin-top: 100px;
   }
 }
 
@@ -1309,5 +1304,15 @@ h1 {
 .posts .post .author-image .gatsby-image-wrapper img {
   max-width: 40px;
   height: 40px;
+}
+
+.page-mobeltransport .text {
+  margin-top: 30px;
+}
+
+@media (min-width: 991px) {
+  .page-mobeltransport .text {
+    margin-top: 40px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
