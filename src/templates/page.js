@@ -8,13 +8,13 @@ import Title from "../components/Title";
 import Posts from "../components/Posts";
 import Container from "../components/Container";
 import FormComp from "../components/Form";
+import Image from "../components/Image";
 
 const page = ({ pageContext: { page } }) => {
     let sections = page.sections.sections
     let banner = page.sections.banner
-    console.log('page', page);
     return (
-        <main>
+        <main className={`page page-${page.slug}`}>
             <Layout>
                 <Seo title="Home - Home Cleaner" description="Clean your home with Home Cleaner" keywords="Home Cleaner, Cleaning" />
                 <Banner {...banner} />
@@ -22,7 +22,9 @@ const page = ({ pageContext: { page } }) => {
                     <div className="page-content-wrapper">
                         <div className="all-sections">
                             {
-                                sections.map((section, index) => {
+
+
+                                sections ? sections.map((section, index) => {
                                     const typeName = section.__typename;
                                     switch (typeName) {
                                         case 'WpPage_Sections_Sections_Text':
@@ -33,13 +35,15 @@ const page = ({ pageContext: { page } }) => {
                                             return <Title {...section} key={index} />
                                         case 'WpPage_Sections_Sections_Form':
                                             return <FormComp {...section} key={index} />
+                                        case 'WpPage_Sections_Sections_Image':
+                                            return <Image {...section} key={index} />
 
                                         default:
                                             return <p>No section</p>
 
                                     }
                                 })
-                            }
+                                    : <h1>Please add section in the dashboard</h1>}
                         </div>
                         <Posts />
                     </div>
