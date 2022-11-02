@@ -1,0 +1,60 @@
+.swipers{
+    display: flex;
+    position: relative;
+    .swiper:first-child{
+        @media (max-width: 992px){
+            display: none;
+        }
+        height: 610px;
+        width: 178px;
+        .swiper-slide{
+            height: 145px !important;
+            img{
+                cursor: grab;
+                width: 100%;
+                height: 145px !important;
+            }
+            .gatsby-image-wrapper{
+                width: 100%;
+                height: 145px !important;
+            }
+        }
+    }
+    .swiper:last-child{
+        margin-left: 10px;
+        width: 100%;
+        img{
+            width: 100%;
+            cursor: grab;
+            @media (min-width: 992px){
+                height: 675px !important;
+            }
+        }
+        .gatsby-image-wrapper{
+            width: 100%;
+            @media (min-width: 992px){
+                height: 675px !important;
+            }
+        }
+    }
+    .arrows{
+        position: absolute;
+        bottom: 0;
+        z-index: 99;
+        width: 72.5px;
+        height: 50px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        @media (max-width: 992px){
+            display: none;
+        }
+    }
+    .review-swiper-button-prev{
+        left: 0;
+    }
+    .review-swiper-button-next{
+        left: 80px;
+    }
+}

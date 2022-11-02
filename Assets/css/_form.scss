@@ -1,0 +1,93 @@
+.form{
+    margin-top: 50px;
+    margin-bottom: 60px;
+    @media (min-width: 991px){
+        margin-top: 100px;
+        margin-bottom: 120px;
+    }
+    
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .two-side{
+            width: 100%;
+            @media (min-width: 1199px){
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                grid-gap: 32px;
+            }
+        }
+        .form-data{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 20px;
+            label{
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 8px;
+                color: $headingColor;
+                font-weight: 600;
+                background: #fff;
+            }
+            .info{
+                border-radius: 5px;
+                border: 1px solid #E5E7EB;
+                color: #D1D5DB;
+                padding: 15px 27px 27px 22px;
+            }
+            input, textarea, select{
+               border-radius: 5px;
+                padding: 17px 10px;
+                border: 1px solid #E5E7EB;
+                outline: none;
+                &:focus{
+                    border-color: $firstColor;
+                }
+           }
+           option, select{
+            color: #6B7280;
+            font-weight: 400;
+            font-family: 'inter';
+            font-size: 16px;
+           }
+           textarea{
+            min-height: 150px;
+           }
+        }
+        button{
+         background-color: $firstColor;
+         color: #fff;
+         outline: none;
+         border: none;
+         height: 50px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         font-size: 16px;
+         line-height: 24px;
+         font-weight: 400;
+         padding: 0 15px;
+         min-width: 119px;
+         cursor: pointer;
+         transition: .4s;
+         border-radius: 5px;
+         margin-left: auto;
+         &:hover{
+            background-color: #fff;
+            color: $firstColor;
+            border: 1px solid $firstColor;
+            svg{
+                path{
+                    stroke: $firstColor;
+                }
+            }
+         }
+         @media (min-width: 992px){
+            font-size: 18px;
+            line-height: 28px;
+         }
+        }
+    }
+}

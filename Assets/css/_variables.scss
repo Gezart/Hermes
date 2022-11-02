@@ -1,0 +1,37 @@
+$firstColor: #EF8000;
+$headingColor: #111827;
+$textColor: #6B7280;
+
+body{
+    padding: 0;
+    margin: 0;
+}
+h1,h2,h3,h4,h5,h6,a,span,li,ul,p, label, option{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'inter';
+    
+}
+.container{
+    margin:0 15px;
+    @media (min-width: 991px){
+        margin: 0 80px;
+    }
+    @media (min-width: 1300px){
+        margin: auto;
+        max-width: 1216px;
+    }
+}
+.page-content-wrapper{
+    @media (min-width: 991px){
+        display: grid;
+        grid-template-columns: calc(100% - 482px) 382px;
+        grid-gap: 50px;
+    }
+    @media (min-width: 1200px){
+        grid-template-columns: calc(100% - 518px) 382px;
+        grid-gap: 136px;
+    }
+}

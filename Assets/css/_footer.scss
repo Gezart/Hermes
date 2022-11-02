@@ -1,0 +1,112 @@
+.top-footer{
+    background-color: $firstColor;
+    padding: 30px 0;    
+    margin-top: 50px;
+    @media (min-width: 991px){
+        margin-top: 100px;
+    }
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    p{
+        color: #fff;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        @media (min-width: 991px){
+            font-size: 18px;
+            line-height: 28px;
+        }   
+    }
+    button{
+        padding: 10px 25px 10px 25px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        background-color: transparent;
+        outline: none;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: .4s;
+        &:hover{
+            background-color: #fff;
+            color: $firstColor;
+            border: 1px solid #fff;
+        }
+
+    }
+}
+.site-footer{
+    background-color: #F9FAFB;
+    padding: 30px 0;
+    .footer-wrapper{
+        @media (min-width: 650px){
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 50px;
+        }
+        @media (min-width: 991px){
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    a, p{
+        color: #6B7280;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    h3{
+        font-size: 16px;
+        font-weight: 500;
+        color: $headingColor;
+        margin-bottom: 15px;
+        margin-top: 30px;
+    }
+    .footer-logo{
+        .logo{
+            margin-bottom: 16px;
+            width: 230px;
+            @media (min-width: 992px){
+                width: auto;
+            }
+        }
+        .location{
+            display: flex;
+            margin-top: 30px;
+            width: 200px;
+            align-items: flex-start;
+            svg{
+                margin-right: 15px;
+            }
+        }
+    }
+    .sm-item{
+        svg{
+            margin-right: 16px;
+            path{
+                transition: 0.4s;
+            }
+            &:hover{
+                path{
+                    fill: $firstColor;
+                }
+            }
+        }
+    }
+    .copyright{
+        margin-top: 62px;
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        border-top: 1px solid #E5E7EB;
+        flex-direction: column;
+        justify-content: center;
+        @media (min-width: 575px){
+            justify-content: space-between;
+            flex-direction: unset;
+        }
+    }
+}
