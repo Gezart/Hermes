@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Container from './Container'
+import LogoBlock from '../../LogoBlock.png'
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -78,7 +79,7 @@ const Footer = () => {
         <Container>
           <div className="footer-wrapper">
             <div className="footer-logo">
-              LOGO
+              <img src={LogoBlock} alt="" />
               <p className="short-derscription">{options.footerDescription}</p>
             </div>
             <div className="footer-menu-wrapper">

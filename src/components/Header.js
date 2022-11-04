@@ -2,7 +2,7 @@ import { graphql, Link, useStaticQuery } from 'gatsby'
 import React from 'react'
 import Container from './Container';
 import { useState } from 'react';
-
+import LogoBlock from '../../LogoBlock.png'
 const Header = () => {
 
   const data = useStaticQuery(graphql`
@@ -71,7 +71,7 @@ const Header = () => {
         <div className="menu">
           <div className="logo">
             <Link to={`/`}>
-              Logo
+              <img src={LogoBlock} alt="" />
             </Link>
             <svg className="menu-toggler" onClick={() => {
               setIsOpen(!isOpen);

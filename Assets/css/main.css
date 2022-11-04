@@ -49,10 +49,11 @@ h1, h2, h3, h4, h5, h6, a, span, li, ul, p, label, option {
 
 .site-header {
   padding-bottom: 24px;
+  background-color: #fff;
 }
 
 .site-header .menu {
-  margin-top: 24px;
+  padding-top: 24px;
 }
 
 @media (min-width: 992px) {
@@ -1152,6 +1153,10 @@ body.hidden {
   margin-top: 30px;
 }
 
+.site-footer .footer-logo {
+  padding-top: 30px;
+}
+
 .site-footer .footer-logo .logo {
   margin-bottom: 16px;
   width: 230px;
@@ -1242,6 +1247,7 @@ h1 {
 
 .posts {
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 @media (min-width: 400px) {
@@ -1845,6 +1851,7 @@ h1 {
 
 .home .posts {
   margin-top: 40px;
+  margin-bottom: 0;
 }
 
 .home-kontakt {

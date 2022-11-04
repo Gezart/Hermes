@@ -1,7 +1,8 @@
 .site-header{
     padding-bottom: 24px;
+    background-color: #fff;
     .menu{
-        margin-top: 24px;
+        padding-top: 24px;
         @media (min-width: 992px) { 
             display: flex;
             justify-content: space-between;
