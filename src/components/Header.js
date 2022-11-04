@@ -46,7 +46,6 @@ const Header = () => {
   const menuItems = data.allWpMenu.nodes[0].menuItems.nodes;
   let options = data.wp.acfOptionsThemeOption.themeOptions
   const [isOpen, setIsOpen] = useState(false)
-  console.log(options);
 
   return (
     <header className="site-header">

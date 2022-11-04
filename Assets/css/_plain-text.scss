@@ -1,57 +1,61 @@
 .plain-text{
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 30px;
-    margin-top: 50px;
-    @media (min-width: 767px){
-        grid-template-columns: repeat(2, 1fr);
-    }
-    @media (min-width: 991px){
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .column{
-        box-shadow: 0px 10px 15px -3px rgba(16, 24, 40, 0.1), 0px 4px 6px -4px rgba(16, 24, 40, 0.1);
+    grid-gap: 20px;
+    .item{
+        background-color: #fff;
+        padding: 30px 20px 30px 40px; 
         border-radius: 6px;
-        padding: 80px 35px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        transition: 0.6s;
-        border: 1px solid transparent;
-        &:hover{
-            border: 1px solid $firstColor;
-            box-shadow: none;
+        box-shadow: 0px 4px 6px -1px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.1);
+        @media (min-width: 767px){
+            display: grid;
+            grid-template-columns: 100px calc(100% - 135px);
+            grid-gap: 35px;
         }
-        h3{
-            font-size: 18px;
-            color: $firstColor;
+        @media (min-width: 991px){
+            display: block;
+        }
+        @media (min-width: 1200px){
+            display: grid;
+        }
+        .image{
+            margin-top: 0;
+            @media (min-width: 767px){
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            @media (min-width: 991px){
+                justify-content: flex-start;
+            }
+            @media (min-width: 1200px){
+                justify-content: center;
+            }
+        }
+        h2{
+            margin-top: 30px;
+            font-size: 20px;
             line-height: 28px;
-            text-align: center;
-            margin: 16px 0;
+            color: $firstColor;
+            font-weight: 600;
+            margin-bottom: 4px;
             @media (min-width: 991px){
                 font-size: 24px;
                 line-height: 32px;
+                margin-top: 0;
             }
+        }
+        h3{
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
         }
         p{
-            text-align: center;
+            margin-top: 15px;
+            color: #6B7280;
+            font-weight: 400;
             font-size: 16px;
             line-height: 24px;
-            color: $textColor;
-        }
-
-        .gatsby-image-wrapper{
-            width: 70px;
-            height: 70px;
-            div{
-                width: 70px;
-                height: 70px;
-            }
-            img{
-                width: 70px;
-                height: 70px;
-            }
         }
     }
 }

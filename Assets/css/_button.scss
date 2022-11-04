@@ -1,0 +1,11 @@
+.button{
+    border-top: 1px solid #E5E7EB;
+    padding-top: 32px;
+    margin-bottom: 50px;
+    @media (min-width: 991px){
+        margin-bottom: 109px;
+    }
+    button{
+        @include button;
+    }
+}

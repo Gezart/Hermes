@@ -5,6 +5,7 @@ $textColor: #6B7280;
 body{
     padding: 0;
     margin: 0;
+    background-color: #F5F5F5;
 }
 h1,h2,h3,h4,h5,h6,a,span,li,ul,p, label, option{
     text-decoration: none;
@@ -33,5 +34,82 @@ h1,h2,h3,h4,h5,h6,a,span,li,ul,p, label, option{
     @media (min-width: 1200px){
         grid-template-columns: calc(100% - 518px) 382px;
         grid-gap: 136px;
+    }
+}
+@mixin button {
+    background-color: $firstColor;
+    color: #fff;
+    outline: none;
+    border: none;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 0 15px;
+    min-width: 119px;
+    cursor: pointer;
+    transition: .4s;
+    border-radius: 5px;
+    margin-left: auto;
+    &:hover{
+       background-color: #fff;
+       color: $firstColor;
+       border: 1px solid $firstColor;
+       svg{
+           path{
+               stroke: $firstColor;
+           }
+       }
+    }
+    @media (min-width: 992px){
+       font-size: 18px;
+       line-height: 28px;
+    }
+}
+@mixin text {
+    margin-top: 50px;
+    @media (min-width: 992px){
+        margin-top: 100px;
+    }
+    h1{
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 28px;
+        color: $headingColor;
+        margin-bottom: 20px;
+        padding-left: 25px;
+        border-left: 6px solid $firstColor;
+        @media (min-width: 992px){
+            margin-bottom: 44px;
+            font-size: 32px;
+            line-height: 40px;
+        }
+    }
+    h3{
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 700;
+        color: $headingColor;
+        margin-bottom: 15px;
+        @media (min-width: 992px){
+            margin-bottom: 20px;
+        }
+    }
+    p{
+        font-size: 16px;
+        font-weight: 400;
+        color: $textColor;
+        margin-bottom: 30px;
+        @media (min-width: 992px){
+            margin-bottom: 52px;
+            font-size: 18px;
+        }
+        strong{
+            color: $headingColor;
+        }
+       
     }
 }

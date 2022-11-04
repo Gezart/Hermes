@@ -88,7 +88,6 @@ const FormComp = () => {
             }
         });
 
-        console.log("Form data", values);
         onSubmitProps.resetForm();
     };
 

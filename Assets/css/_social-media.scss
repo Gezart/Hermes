@@ -1,0 +1,69 @@
+.home-sm{
+    h3{
+        margin-top: 6px;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 28px;
+        color: $headingColor;
+        padding-bottom: 15px;
+        @media (min-width: 992px){
+            font-size: 18px;
+        }
+    }
+    .all-sm{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 16px;
+        max-width: 320px;
+        a{
+        .item{
+            height: 64px;
+            border-radius: 6px;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .4s;
+                svg{
+                    path{
+                        fill: #9CA3AF;
+                        transition: .4s;
+                    }
+                }
+                &:hover{
+                    background-color: $firstColor;
+                        svg{
+                            path{
+                                fill: #fff;
+                            }
+                        }
+                    }
+            }
+            &:last-child{
+
+                .item{
+                    svg{
+                        path{
+                            fill: unset;
+                        }
+                    }
+                    &:hover{
+                        svg{
+                            path{
+                                transition: .4s;
+                                fill: unset;
+                                stroke: #fff;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+.home{
+    .posts{
+        margin-top: 40px;
+    }
+}

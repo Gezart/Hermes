@@ -1,8 +1,47 @@
-.page-mobeltransport{
+.page-mobeltransport, .page-entsorgungen, .page-uber-uns, .page-raumungen, .page-umzugsreinigungen, .page-endreinigungen{
     .text{
         margin-top: 30px;
         @media (min-width: 991px){
             margin-top: 40px;
+        }
+    }
+}
+.page-blog{
+    .page-content-wrapper{
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+    .all-sections{
+        display: none;
+    }
+    .posts{
+        width: 100%;
+        .post{
+            grid-template-columns: 280px calc(100% - 312px);
+            grid-gap: 32px;
+            .post-content{
+                font-size: 18px;
+                line-height: 28px;
+                @media (min-width: 992px){
+                    font-size: 24px;
+                    line-height: 30px;
+                }
+            }
+            .post-image{
+                .gatsby-image-wrapper{
+                    width: 280px;
+                    height: 150px;
+                    div{
+                        max-width: 280px !important;
+                        height: 150px;
+                    }
+                    img{
+                        max-width: 280px !important;
+                        height: 150px;
+                        object-fit: cover;
+                    }
+                }
+            }
         }
     }
 }

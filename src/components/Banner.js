@@ -6,7 +6,6 @@ const Banner = ({title, content, image, bannerSize}) => {
   const bannerImage = getImage(image?.localFile)
   return (
     <div className={`banner ${bannerSize}`}>
-        {/* <GatsbyImage image={getImage(image.localFile)} /> */}
         <div className="banner-image">
           <GatsbyImage image={bannerImage} alt="Banner Image"/>
         </div>

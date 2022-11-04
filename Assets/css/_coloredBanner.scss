@@ -3,7 +3,7 @@
     background-color: $firstColor;
     margin-top: 50px;
     @media (min-width: 992px){
-        margin-top: 90px;
+        margin-top: 80px;
         // background-color: unset;
     }
     .image{
@@ -12,11 +12,14 @@
             display: block;
         }
         .gatsby-image-wrapper{
+            width: 100% !important;
             height: 216px;
             div{
+                width: 100%;
                 height: 216px;
             }
             img{
+                width: 100%;
                 height: 216px;
             }
         }
@@ -29,6 +32,9 @@
             left: 0;
             width: 70%;
         }
+        @media (min-width: 1300px){
+            padding: 45px 50px;
+        }
         h3{
             font-size: 20px;
             font-weight: 600;
@@ -40,11 +46,19 @@
                 line-height: 32px;
             }
         }
-        p{
+        p,a{
             color: #fff;
             font-size: 16px;
-            line-height: 22px;
+            line-height: 28px;
             font-weight: 400;
+            font-weight: 500;
+            margin-top: 9px;
+            @media (min-width: 1300px){
+                font-size: 18px;
+            }
+        }
+        a{
+            text-decoration: underline !important;
         }
     }
 }

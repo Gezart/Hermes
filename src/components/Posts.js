@@ -1,14 +1,15 @@
-import {useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
 
 const Posts = () => {
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     {
-      allWpPost(limit: 4) {
+      allWpPost(limit: 3) {
         nodes {
           title
           date
+          slug
           featuredImage {
             node {
               localFile {
@@ -43,32 +44,35 @@ const Posts = () => {
       }
     }
   `)
-    let posts = data.allWpPost.nodes
-    console.log(posts[0].author?.node?.userImage.userImage?.localFile);
+  let posts = data.allWpPost.nodes
   return (
-        <div className="posts">
-          <h2>Interessante Beiträge</h2>
-            {
-                
-                posts.map((post, index) =>
-                    <div className="post" key={index}>
-                        <div className="post-image">
-                            <GatsbyImage image={getImage(post?.featuredImage?.node?.localFile)} alt={`${post.title} image`}/>
-                        </div>
-                        <div className="post-content">
-                            <h3>{post.title}</h3>
-                            <div className="author-image">
-                                <GatsbyImage image={getImage(post?.author?.node?.userImage?.userImage?.localFile)} alt={`${post?.author?.node?.firstName} ${post?.author?.node?.lastName}`}/>
-                                <div className="content">
-                                    <p>{post?.author?.node?.firstName} {post?.author?.node?.lastName}</p>
-                                    <div className="date"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                )
-            }
-        </div>
+    <div className="posts">
+      <h2>Interessante Beiträge</h2>
+      {
+
+        posts.map((post, index) =>
+          <div className="post" key={index}>
+            <div className="post-image">
+              <Link to={`/blog/${post.slug}`}>
+                <GatsbyImage image={getImage(post?.featuredImage?.node?.localFile)} alt={`${post.title} image`} />
+              </Link>
+            </div>
+            <div className="post-content">
+              <Link to={`/blog/${post.slug}`}>
+                <h3>{post.title}</h3>
+              </Link>
+              <div className="author-image">
+                <GatsbyImage image={getImage(post?.author?.node?.userImage?.userImage?.localFile)} alt={`${post?.author?.node?.firstName} ${post?.author?.node?.lastName} image`} />
+                <div className="content">
+                  <p>{post?.author?.node?.firstName} {post?.author?.node?.lastName}</p>
+                  <div className="date"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      }
+    </div>
   )
 }
 
