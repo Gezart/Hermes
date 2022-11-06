@@ -10,7 +10,7 @@ import Title from "../components/Title";
 import Posts from "../components/Posts";
 import Container from "../components/Container";
 import PlainText from "../components/PlainText";
-import SubtitleWithText from "../components/subtitleWithText";
+// import SubtitleWithText from "../components/subti  tleWithText";
 import Offers from "../components/Offers";
 import Phone from "../components/Phone";
 import SocialMedia from "../components/SocialMedia";
@@ -23,7 +23,7 @@ export default function Home({ data }) {
   return (
     <main className="home">
       <Layout>
-        <Seo title="Home - Home Cleaner" description="Clean your home with Home Cleaner" keywords="Home Cleaner, Cleaning" />
+        <Seo title="Home" description="Clean your home with Home Cleaner" keywords="Hermes" />
         <Banner {...banner} />
         <Container>
           <div className="page-content-wrapper">
@@ -54,7 +54,7 @@ export default function Home({ data }) {
             </div>
           </div>
           <ColoredBanner bannerWithColor={homeOption.bannerWithColor} />
-          <SubtitleWithText subtitleWithText={homeOption.subtitleWithText} />
+          {/* <SubtitleWithText subtitleWithText={homeOption.subtitleWithText} /> */}
         </Container>
       </Layout>
     </main>
