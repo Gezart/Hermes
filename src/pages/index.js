@@ -29,7 +29,7 @@ export default function Home({ data }) {
           <div className="page-content-wrapper">
             <div className="all-sections">
               {
-                sections?.map((section, index) => {
+                !sections?.map((section, index) => {
                   const typeName = section.__typename;
                   switch (typeName) {
                     case 'WpPage_Sections_Sections_Text':
