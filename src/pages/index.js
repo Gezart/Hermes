@@ -23,7 +23,7 @@ export default function Home({ data }) {
   return (
     <main className="home">
       <Layout>
-        <Seo title="Home" description="Clean your home with Home Cleaner" keywords="Hermes" />
+        <Seo title="Home - Hermes" description="Hermes" keywords="Hermes" />
         <Banner {...banner} />
         <Container>
           <div className="page-content-wrapper">
