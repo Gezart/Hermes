@@ -5,10 +5,10 @@ import React from 'react'
 const Posts = () => {
   const data = useStaticQuery(graphql`
     {
-      allWpPost(limit: 3) {
+      allWpPost(sort: {fields: date, order: DESC}, limit: 3) {
         nodes {
           title
-          date
+          date(formatString: "MMM DD, YYYY")
           slug
           featuredImage {
             node {
@@ -65,7 +65,7 @@ const Posts = () => {
                 <GatsbyImage image={getImage(post?.author?.node?.userImage?.userImage?.localFile)} alt={`${post?.author?.node?.firstName} ${post?.author?.node?.lastName} image`} />
                 <div className="content">
                   <p>{post?.author?.node?.firstName} {post?.author?.node?.lastName}</p>
-                  <div className="date"></div>
+                  <p className="date">{post?.date}</p>
                 </div>
               </div>
             </div>

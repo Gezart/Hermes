@@ -61,7 +61,7 @@ export default function Home({ data }) {
   )
 }
 export const data = graphql`
-query PageQuery {
+{
   wpPage(title: {eq: "Home"}) {
     sections {
       banner {

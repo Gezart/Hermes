@@ -40,12 +40,31 @@ const Header = () => {
         }
       }
     }
+    wpMenu(name: {eq: "Main Menu"}) {
+      menuItems {
+        nodes {
+          label
+          uri
+          parentId
+          id
+          childItems {
+            nodes {
+              label
+              uri
+              id
+            }
+          }
+        }
+      }
+    }
   }
   
   `)
-  const menuItems = data.allWpMenu.nodes[0].menuItems.nodes;
+  // const menuItems = data.allWpMenu.nodes[0].menuItems.nodes;
   let options = data.wp.acfOptionsThemeOption.themeOptions
   const [isOpen, setIsOpen] = useState(false)
+  let menu = data.wpMenu.menuItems.nodes
+  console.log('>>>>>>>>>>>', menu)
 
   return (
     <header className="site-header">
@@ -80,8 +99,8 @@ const Header = () => {
           </div>
 
           <nav className={`navigation ${isOpen ? "active" : ""}`} >
-            <svg className='close-menu' onClick={() => setIsOpen(!isOpen) } fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="30px" height="30px"><path d="M 7.7070312 6.2929688 L 6.2929688 7.7070312 L 23.585938 25 L 6.2929688 42.292969 L 7.7070312 43.707031 L 25 26.414062 L 42.292969 43.707031 L 43.707031 42.292969 L 26.414062 25 L 43.707031 7.7070312 L 42.292969 6.2929688 L 25 23.585938 L 7.7070312 6.2929688 z" /></svg>
-            <ul>
+            <svg className='close-menu' onClick={() => setIsOpen(!isOpen)} fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="30px" height="30px"><path d="M 7.7070312 6.2929688 L 6.2929688 7.7070312 L 23.585938 25 L 6.2929688 42.292969 L 7.7070312 43.707031 L 25 26.414062 L 42.292969 43.707031 L 43.707031 42.292969 L 26.414062 25 L 43.707031 7.7070312 L 42.292969 6.2929688 L 25 23.585938 L 7.7070312 6.2929688 z" /></svg>
+            {/* <ul>
               {
                 menuItems.map((item, index) =>
                   <li key={index}>
@@ -89,6 +108,34 @@ const Header = () => {
                   </li>
                 )
               }
+            </ul> */}
+            <ul>
+              {
+                menu.map(mainItem =>
+                  !mainItem.parentId ? (
+                    <li key={mainItem.id}>
+                      <Link to={mainItem.uri}>
+                        {mainItem.label}
+                        {mainItem.childItems.nodes.length !== 0 && <div>dd</div>}
+                      </Link>
+                      {mainItem.childItems.nodes.length !== 0 ? (
+                        <ul>
+                          {mainItem.childItems.nodes.map(childItem =>
+                            <li key={childItem.id}>
+                              <Link to={childItem.uri}>
+                                {childItem.label}
+                              </Link>
+                            </li>
+                          )}
+                        </ul>
+                      ) : null
+                      }
+                    </li>
+
+                  ) : null
+
+
+                )}
             </ul>
           </nav>
         </div>
