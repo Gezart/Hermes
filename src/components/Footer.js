@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import Container from './Container'
 import LogoBlock from '../../LogoBlock.png'
 
-const Footer = () => {
+const Footer = ({setIsActive}) => {
   const data = useStaticQuery(graphql`
   {
     wp {
@@ -75,7 +75,7 @@ const Footer = () => {
   let policyMenu = options.policyMenu
   return (
     <>
-      <footer className='site-footer'>
+      <footer className='site-footer' onClick={() => setIsActive("")}>
         <Container>
           <div className="footer-wrapper">
             <div className="footer-logo">

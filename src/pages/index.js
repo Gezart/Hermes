@@ -14,8 +14,11 @@ import PlainText from "../components/PlainText";
 import Offers from "../components/Offers";
 import Phone from "../components/Phone";
 import SocialMedia from "../components/SocialMedia";
+import { useState } from "react";
 
 export default function Home({ data }) {
+
+
   let homeOption = data.allWp.nodes[0].acfOptionsHomeOption.homeOption
   let themeOption = data?.allWp?.nodes[0].acfOptionsThemeOption.themeOptions
   let sections = data.wpPage.sections.sections

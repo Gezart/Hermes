@@ -3,7 +3,10 @@ import React from 'react'
 import Container from './Container';
 import { useState } from 'react';
 import LogoBlock from '../../LogoBlock.png'
-const Header = () => {
+const Header = ({setIsActive,isActive}) => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  console.log("isactive",isActive);
 
   const data = useStaticQuery(graphql`
   {
@@ -62,13 +65,11 @@ const Header = () => {
   `)
   // const menuItems = data.allWpMenu.nodes[0].menuItems.nodes;
   let options = data.wp.acfOptionsThemeOption.themeOptions
-  const [isOpen, setIsOpen] = useState(false)
   let menu = data.wpMenu.menuItems.nodes
-  console.log('>>>>>>>>>>>', menu)
 
   return (
     <header className="site-header">
-      <div className="top-header">
+      <div className="top-header"  onClick={() => setIsActive("")}>
         <Container>
           <div className="contact-item">
             <div className="icon" dangerouslySetInnerHTML={{ __html: options.jobIcon }}></div>
@@ -88,7 +89,7 @@ const Header = () => {
       </div>
       <Container>
         <div className="menu">
-          <div className="logo">
+          <div className="logo" onClick={() => setIsActive("")}>
             <Link to={`/`}>
               <img src={LogoBlock} alt="" />
             </Link>
@@ -100,27 +101,21 @@ const Header = () => {
 
           <nav className={`navigation ${isOpen ? "active" : ""}`} >
             <svg className='close-menu' onClick={() => setIsOpen(!isOpen)} fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="30px" height="30px"><path d="M 7.7070312 6.2929688 L 6.2929688 7.7070312 L 23.585938 25 L 6.2929688 42.292969 L 7.7070312 43.707031 L 25 26.414062 L 42.292969 43.707031 L 43.707031 42.292969 L 26.414062 25 L 43.707031 7.7070312 L 42.292969 6.2929688 L 25 23.585938 L 7.7070312 6.2929688 z" /></svg>
-            {/* <ul>
-              {
-                menuItems.map((item, index) =>
-                  <li key={index}>
-                    <Link to={item.url}>{item.label}</Link>
-                  </li>
-                )
-              }
-            </ul> */}
-            <ul>
+            <ul className='main-menu'>
               {
                 menu.map(mainItem =>
                   !mainItem.parentId ? (
-                    <li key={mainItem.id}>
-                      <Link to={mainItem.uri}>
+                    <li key={mainItem.id}  onClick={() =>setIsActive(mainItem.label)}> 
+                      {/* {
+                      console.log(mainItem)
+                      } */}
+                      <Link to={mainItem.uri} onClick={() => {setIsOpen(!isOpen)}}>
                         {mainItem.label}
-                        {mainItem.childItems.nodes.length !== 0 && <div>dd</div>}
+                        {/* {mainItem.childItems.nodes.length !== 0 && <div>dd</div>} */}
                       </Link>
-                      {mainItem.childItems.nodes.length !== 0 ? (
-                        <ul>
-                          {mainItem.childItems.nodes.map(childItem =>
+                      {isActive == mainItem.label && mainItem.childItems.nodes.length !== 0 ? (
+                        <ul className='sub-menu'>
+                          { mainItem.childItems.nodes.map(childItem =>
                             <li key={childItem.id}>
                               <Link to={childItem.uri}>
                                 {childItem.label}

@@ -44,6 +44,7 @@ const Posts = () => {
       }
     }
   `)
+  
   let posts = data.allWpPost.nodes
   return (
     <div className="posts">

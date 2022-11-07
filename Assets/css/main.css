@@ -80,6 +80,9 @@ h1, h2, h3, h4, h5, h6, a, span, li, ul, p, label, option {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 @media (min-width: 992px) {
@@ -146,7 +149,7 @@ h1, h2, h3, h4, h5, h6, a, span, li, ul, p, label, option {
   }
 }
 
-.site-header .menu .navigation ul {
+.site-header .menu .navigation .main-menu {
   margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -164,7 +167,7 @@ h1, h2, h3, h4, h5, h6, a, span, li, ul, p, label, option {
 }
 
 @media (min-width: 992px) {
-  .site-header .menu .navigation ul {
+  .site-header .menu .navigation .main-menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -176,27 +179,28 @@ h1, h2, h3, h4, h5, h6, a, span, li, ul, p, label, option {
   }
 }
 
-.site-header .menu .navigation ul li {
+.site-header .menu .navigation .main-menu li {
+  position: relative;
   margin-bottom: 15px;
 }
 
 @media (min-width: 992px) {
-  .site-header .menu .navigation ul li {
+  .site-header .menu .navigation .main-menu li {
     margin-bottom: unset;
   }
 }
 
-.site-header .menu .navigation ul li a {
+.site-header .menu .navigation .main-menu li a {
   color: #111827;
 }
 
 @media (min-width: 992px) {
-  .site-header .menu .navigation ul li a {
+  .site-header .menu .navigation .main-menu li a {
     margin-left: 24px;
   }
 }
 
-.site-header .menu .navigation ul li a[aria-current="page"] {
+.site-header .menu .navigation .main-menu li a[aria-current="page"] {
   color: #EF8000;
 }
 
@@ -265,6 +269,35 @@ h1, h2, h3, h4, h5, h6, a, span, li, ul, p, label, option {
 
 .site-header .top-header .container .contact-item .icon {
   margin-right: 15px;
+}
+
+.sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  min-width: 240px;
+  padding-top: 20px;
+  -webkit-box-shadow: 0px 4px 6px -1px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.1);
+          box-shadow: 0px 4px 6px -1px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.1);
+}
+
+@media (min-width: 992px) {
+  .sub-menu {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    z-index: 999;
+  }
+}
+
+.sub-menu li {
+  padding: 0 15px;
+  padding-bottom: 20px;
 }
 
 body.hidden {
