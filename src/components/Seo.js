@@ -7,7 +7,7 @@ const Seo = ({title, description, keywords}) => {
     <>
         <Helmet>
             <title>{title}</title>
-            <link rel="icon"   href={Logo} />
+            <link href={Logo} rel='icon nofollow noopener noreferrer' />
             <meta name="description" content={description}/>
             <meta name="keywords" content={keywords}/>
         </Helmet>

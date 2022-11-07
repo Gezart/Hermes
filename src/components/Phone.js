@@ -6,7 +6,7 @@ const Phone = ({themeOption}) => {
         <div className="phone-icon" dangerouslySetInnerHTML={{__html: themeOption.iconPhoneHome}}></div>
         <h3>KONTAKT</h3>
         <p>Rufen sie uns an</p>
-        <a href={themeOption.phone.url}>{themeOption.phone.title}</a>
+        <a href={themeOption.phone.url} rel='nofollow noopener noreferrer'>{themeOption.phone.title}</a>
     </div>
   )
 }

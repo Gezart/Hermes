@@ -1,6 +1,5 @@
 import React from 'react'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import Container from './Container'
 
 const ColoredBanner = ({bannerWithColor}) => {
     const bannerImage = getImage(bannerWithColor?.image?.localFile)

@@ -10,11 +10,10 @@ import Title from "../components/Title";
 import Posts from "../components/Posts";
 import Container from "../components/Container";
 import PlainText from "../components/PlainText";
-// import SubtitleWithText from "../components/subti  tleWithText";
+import SubtitleWithText from "../components/subtitleWithText";
 import Offers from "../components/Offers";
 import Phone from "../components/Phone";
 import SocialMedia from "../components/SocialMedia";
-import { useState } from "react";
 
 export default function Home({ data }) {
 
@@ -57,7 +56,7 @@ export default function Home({ data }) {
             </div>
           </div>
           <ColoredBanner bannerWithColor={homeOption.bannerWithColor} />
-          {/* <SubtitleWithText subtitleWithText={homeOption.subtitleWithText} /> */}
+          <SubtitleWithText subtitleWithText={homeOption.subtitleWithText} />
         </Container>
       </Layout>
     </main>

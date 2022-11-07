@@ -73,16 +73,16 @@ const Header = ({setIsActive,isActive}) => {
         <Container>
           <div className="contact-item">
             <div className="icon" dangerouslySetInnerHTML={{ __html: options.jobIcon }}></div>
-            <Link to={options.jobs.url}>{options.jobs.title}</Link>
+            <Link to={options.jobs.url} rel='nofollow noopener noreferrer'>{options.jobs.title}</Link>
           </div>
           <div className='mail-phone'>
             <div className="contact-item">
               <div className="icon" dangerouslySetInnerHTML={{ __html: options.emailIcon }}></div>
-              <Link to={options.email?.url}>{options.email?.title}</Link>
+              <Link to={options.email?.url} rel='nofollow noopener noreferrer'>{options.email?.title}</Link>
             </div>
             <div className="contact-item">
               <div className="icon" dangerouslySetInnerHTML={{ __html: options.phoneIcon }}></div>
-              <Link to={options.phone?.url}>{options.phone?.title}</Link>
+              <Link to={options.phone?.url} rel='nofollow noopener noreferrer'>{options.phone?.title}</Link>
             </div>
           </div>
         </Container>
