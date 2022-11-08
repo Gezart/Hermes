@@ -76,5 +76,18 @@
                 }
             }
         }
+        .blog-link{
+            color: $firstColor;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            text-decoration: underline;
+            display: none;
+        }
+    }
+}
+.page-blog{
+    .blog-link{
+        display: unset !important;
     }
 }

@@ -35,6 +35,9 @@ exports.createPages = async ({ graphql, actions }) => {
                   ... on WpPage_Sections_Sections_Form {
                     fieldGroupName
                   }
+                  ... on WpPage_Sections_Sections_Form2 {
+                    fieldGroupName
+                  }
                   ... on WpPage_Sections_Sections_Posts {
                     fieldGroupName
                   }
@@ -83,7 +86,9 @@ exports.createPages = async ({ graphql, actions }) => {
                   ... on WpPage_Sections_Sections_ContactLinks {
                     fieldGroupName
                   }
-                  
+                  ... on WpPage_Sections_Sections_KontaktForm {
+                    fieldGroupName
+                  }
 
 
           
@@ -95,8 +100,8 @@ exports.createPages = async ({ graphql, actions }) => {
         nodes {
           title
           slug
-          date
-          content
+          date(formatString: "DD MMM, YYYY")
+          content 
           featuredImage {
             node {
               localFile {

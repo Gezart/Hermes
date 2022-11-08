@@ -10,14 +10,14 @@ import Title from "../components/Title";
 import Posts from "../components/Posts";
 import Container from "../components/Container";
 import PlainText from "../components/PlainText";
-import SubtitleWithText from "../components/subtitleWithText";
+// import SubtitleWithText from "../components/subtitleWithText";
 import Offers from "../components/Offers";
 import Phone from "../components/Phone";
 import SocialMedia from "../components/SocialMedia";
 
 export default function Home({ data }) {
 
-
+  let allPosts = data.allWpPost.nodes
   let homeOption = data.allWp.nodes[0].acfOptionsHomeOption.homeOption
   let themeOption = data?.allWp?.nodes[0].acfOptionsThemeOption.themeOptions
   let sections = data.wpPage.sections.sections
@@ -52,11 +52,11 @@ export default function Home({ data }) {
               <Phone themeOption={themeOption} />
               <Offers offers={homeOption.offers} />
               <SocialMedia themeOption={themeOption}/>
-              <Posts />
+              <Posts posts={allPosts} title={"Interessante Beiträge"} />
             </div>
           </div>
           <ColoredBanner bannerWithColor={homeOption.bannerWithColor} />
-          <SubtitleWithText subtitleWithText={homeOption.subtitleWithText} />
+          {/* <SubtitleWithText subtitleWithText={homeOption.subtitleWithText} /> */}
         </Container>
       </Layout>
     </main>
@@ -112,7 +112,45 @@ export const data = graphql`
       }
     }
   }
-  allWp {
+  allWpPost(limit: 3){
+    nodes {
+    title
+    slug
+    date(formatString: "DD MMM, YYYY")
+    content 
+    featuredImage {
+        node {
+        localFile {
+            childImageSharp {
+            gatsbyImageData(
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+            )
+            }
+        }
+        }
+    }
+    author {
+        node {
+        firstName
+        lastName
+        userImage {
+            userImage {
+            localFile {
+                childImageSharp {
+                    gatsbyImageData(
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                    )
+                }
+            }
+            }
+        }
+        }
+    }
+    }
+}
+  allWp{
     nodes {
       acfOptionsHomeOption {
         homeOption {

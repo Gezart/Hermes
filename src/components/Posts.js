@@ -1,57 +1,14 @@
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
 
-const Posts = () => {
-  const data = useStaticQuery(graphql`
-    {
-      allWpPost(sort: {fields: date, order: DESC}, limit: 3) {
-        nodes {
-          title
-          date(formatString: "MMM DD, YYYY")
-          slug
-          featuredImage {
-            node {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
-                  )
-                }
-              }
-            }
-          }
-          author {
-            node {
-            firstName
-            lastName
-              userImage {
-                userImage {
-                  localFile {
-                    childImageSharp {
-                        gatsbyImageData(
-                          placeholder: BLURRED
-                          formats: [AUTO, WEBP, AVIF]
-                        )
-                      }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-  
-  let posts = data.allWpPost.nodes
+const Posts = ({ posts, title }) => {
+  console.log('posts', posts);
   return (
     <div className="posts">
-      <h2>Interessante Beiträge</h2>
+      {title && <h2>{title}</h2>}
       {
-
-        posts.map((post, index) =>
+        posts?.map((post, index) =>
           <div className="post" key={index}>
             <div className="post-image">
               <Link to={`/blog/${post.slug}`}>
@@ -69,6 +26,7 @@ const Posts = () => {
                   <p className="date">{post?.date}</p>
                 </div>
               </div>
+                <Link className='blog-link' to={post?.slug}>Weiterlesen →</Link>
             </div>
           </div>
         )
@@ -78,4 +36,6 @@ const Posts = () => {
 }
 
 export default Posts
+
+
 

@@ -11,10 +11,14 @@ import Image from "../components/Image";
 import Button from "../components/Button";
 import KontaktInfo from "../components/KontaktInfo";
 import ContactLinks from "../components/ContactLinks";
+import ContactForm from "../components/ContactForm";
+import { graphql } from "gatsby";
+import Form2 from "../components/Form2";
 
-const page = ({ pageContext: { page } }) => {
+const page = ({ pageContext: { page }, data }) => {
     let sections = page.sections.sections
     let banner = page.sections.banner
+    let allPosts = data.allWpPost.nodes
     return (
         <main className={`page page-${page.slug}`}>
             <Layout>
@@ -35,6 +39,8 @@ const page = ({ pageContext: { page } }) => {
                                             return <Title {...section} key={index} />
                                         case 'WpPage_Sections_Sections_Form':
                                             return <FormComp {...section} key={index} />
+                                        case 'WpPage_Sections_Sections_Form2':
+                                            return <Form2 {...section} key={index} />
                                         case 'WpPage_Sections_Sections_Image':
                                             return <Image {...section} key={index} />
                                         case 'WpPage_Sections_Sections_Button':
@@ -43,6 +49,10 @@ const page = ({ pageContext: { page } }) => {
                                             return <KontaktInfo {...section} key={index} />
                                         case 'WpPage_Sections_Sections_ContactLinks':
                                             return <ContactLinks {...section} key={index} />
+                                        case 'WpPage_Sections_Sections_KontaktForm':
+                                            return <ContactForm {...section} key={index} />
+                                         case 'WpPage_Sections_Sections_KontaktForm':
+                                            return <ContactForm {...section} key={index} />
 
                                         default:
                                             return <p>No section</p>
@@ -51,7 +61,7 @@ const page = ({ pageContext: { page } }) => {
                                 })
                                     : <h1>Please add section in the dashboard</h1>}
                         </div>
-                        <Posts />
+                        <Posts posts={allPosts} title={"Interessante Beiträge"} />
                     </div>
                 </Container>
             </Layout>
@@ -60,4 +70,48 @@ const page = ({ pageContext: { page } }) => {
 }
 
 export default page
+
+export const data = graphql `
+query postsInPage {
+    allWpPost(limit: 4){
+        nodes {
+        title
+        slug
+        date(formatString: "DD MMM, YYYY")
+        content 
+        featuredImage {
+            node {
+            localFile {
+                childImageSharp {
+                gatsbyImageData(
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                )
+                }
+            }
+            }
+        }
+        author {
+            node {
+            firstName
+            lastName
+            userImage {
+                userImage {
+                localFile {
+                    childImageSharp {
+                        gatsbyImageData(
+                        placeholder: BLURRED
+                        formats: [AUTO, WEBP, AVIF]
+                        )
+                    }
+                }
+                }
+            }
+            }
+        }
+        }
+    }
+}
+
+`
 
