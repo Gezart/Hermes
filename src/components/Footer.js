@@ -122,7 +122,7 @@ const Footer = ({ setIsActive }) => {
             </div>
           </div>
           <div className="copyright">
-            <p>© Copyright Home Cleaner.</p>
+            <p>© Copyright Hermes.</p>
             <p>Made with love by <a href="https://www.nerdycreative.ch/" target="_blank" rel='nofollow noopener noreferrer'>Nerdy Creative</a></p>
           </div>
         </Container>
