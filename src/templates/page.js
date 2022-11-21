@@ -22,7 +22,7 @@ const page = ({ pageContext: { page }, data }) => {
     return (
         <main className={`page page-${page.slug}`}>
             <Layout>
-                <Seo title="Home - Home Cleaner" description="Clean your home with Home Cleaner" keywords="Home Cleaner, Cleaning" />
+                <Seo title="Home - Hermes" description="Hermes" keywords="Hermes" />
                 <Banner {...banner} />
                 <Container>
                     <div className="page-content-wrapper">
