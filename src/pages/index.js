@@ -56,7 +56,7 @@ export default function Home({ data }) {
             </div>
           </div>
           <ColoredBanner bannerWithColor={homeOption.bannerWithColor} />
-          <SubtitleWithText subtitleWithText={homeOption?.subtitleWithText} />
+          <SubtitleWithText title={homeOption?.subtitleWithText?.theSubtitle} content={homeOption?.subtitleWithText?.theContent} />
         </Container>
       </Layout>
     </main>
