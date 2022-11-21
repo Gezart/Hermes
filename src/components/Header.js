@@ -109,11 +109,12 @@ const Header = ({setIsActive,isActive}) => {
                       {/* {
                       console.log(mainItem)
                       } */}
-                      <Link to={mainItem.uri} onClick={() => {setIsOpen(!isOpen)}}>
+                      {/* <Link to={mainItem.uri} onClick={() => {setIsOpen(!isOpen)}}> */}
+                      <Link to={mainItem.uri}>
                         {mainItem.label}
-                        {/* {mainItem.childItems.nodes.length !== 0 && <div>dd</div>} */}
+                        {mainItem.childItems.nodes.length !== 0 && <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 1L6 6L1 1" stroke="#111827" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/></svg>}
                       </Link>
-                      {isActive == mainItem.label && mainItem.childItems.nodes.length !== 0 ? (
+                      { mainItem.childItems.nodes.length !== 0 ? (
                         <ul className='sub-menu'>
                           { mainItem.childItems.nodes.map(childItem =>
                             <li key={childItem.id}>

@@ -184,6 +184,18 @@ h1, h2, h3, h4, h5, h6, a, span, li, ul, p, label, option {
   margin-bottom: 15px;
 }
 
+.site-header .menu .navigation .main-menu li:hover .sub-menu {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
 @media (min-width: 992px) {
   .site-header .menu .navigation .main-menu li {
     margin-bottom: unset;
@@ -192,12 +204,40 @@ h1, h2, h3, h4, h5, h6, a, span, li, ul, p, label, option {
 
 .site-header .menu .navigation .main-menu li a {
   color: #111827;
+  -webkit-transition: .3s;
+  transition: .3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.site-header .menu .navigation .main-menu li a:hover {
+  color: #EF8000;
+}
+
+.site-header .menu .navigation .main-menu li a:hover svg path {
+  -webkit-transition: .3s;
+  transition: .3s;
+  stroke: #EF8000;
 }
 
 @media (min-width: 992px) {
   .site-header .menu .navigation .main-menu li a {
     margin-left: 24px;
   }
+}
+
+.site-header .menu .navigation .main-menu li .active-link {
+  color: #EF8000;
+}
+
+.site-header .menu .navigation .main-menu li svg {
+  -webkit-transition: .4s;
+  transition: .4s;
+  margin-left: 11px;
 }
 
 .site-header .menu .navigation .main-menu li a[aria-current="page"] {
@@ -272,21 +312,19 @@ h1, h2, h3, h4, h5, h6, a, span, li, ul, p, label, option {
 }
 
 .sub-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
   background-color: #fff;
   min-width: 240px;
   padding-top: 20px;
   -webkit-box-shadow: 0px 4px 6px -1px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.1);
           box-shadow: 0px 4px 6px -1px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.1);
+  display: none;
 }
 
 @media (min-width: 992px) {
   .sub-menu {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
     -webkit-box-orient: vertical !important;
     -webkit-box-direction: normal !important;
         -ms-flex-direction: column !important;
