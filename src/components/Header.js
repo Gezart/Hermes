@@ -6,8 +6,6 @@ import LogoBlock from '../../LogoBlock.png'
 const Header = ({setIsActive,isActive}) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  console.log("isactive",isActive);
-
   const data = useStaticQuery(graphql`
   {
     wp {
@@ -106,13 +104,10 @@ const Header = ({setIsActive,isActive}) => {
                 menu.map(mainItem =>
                   !mainItem.parentId ? (
                     <li key={mainItem.id}  onClick={() =>setIsActive(mainItem.label)}> 
-                      {/* {
-                      console.log(mainItem)
-                      } */}
                       {/* <Link to={mainItem.uri} onClick={() => {setIsOpen(!isOpen)}}> */}
                       <Link to={mainItem.uri}>
                         {mainItem.label}
-                        {mainItem.childItems.nodes.length !== 0 && <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 1L6 6L1 1" stroke="#111827" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/></svg>}
+                        {mainItem.childItems.nodes.length !== 0 && <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 1L6 6L1 1" stroke="#111827" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/></svg>}
                       </Link>
                       { mainItem.childItems.nodes.length !== 0 ? (
                         <ul className='sub-menu'>

@@ -85,7 +85,6 @@ const Form2 = ({pageTitle}) => {
             }
         });
 
-        console.log("Form data", values);
         onSubmitProps.resetForm();
     };
 

@@ -3,7 +3,6 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
 
 const Posts = ({ posts, title }) => {
-  console.log('posts', posts);
   return (
     <div className="posts">
       {title && <h2>{title}</h2>}

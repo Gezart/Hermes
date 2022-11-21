@@ -39,7 +39,6 @@ const ContactForm = () => {
             }
         });
 
-        console.log("Form data", values);
         onSubmitProps.resetForm();
     };
 
