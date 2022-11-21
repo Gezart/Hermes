@@ -10,7 +10,7 @@ import Title from "../components/Title";
 import Posts from "../components/Posts";
 import Container from "../components/Container";
 import PlainText from "../components/PlainText";
-// import SubtitleWithText from "../components/subtitleWithText";
+import SubtitleWithText from "../components/subtitleWithText";
 import Offers from "../components/Offers";
 import Phone from "../components/Phone";
 import SocialMedia from "../components/SocialMedia";
@@ -57,7 +57,7 @@ export default function Home({ data }) {
             </div>
           </div>
           <ColoredBanner bannerWithColor={homeOption.bannerWithColor} />
-          {/* <SubtitleWithText title={homeOption?.subtitleWithText?.theSubtitle} content={homeOption?.subtitleWithText?.theContent} /> */}
+          <SubtitleWithText title={homeOption?.subtitleWithText?.theSubtitle} content={homeOption?.subtitleWithText?.theContent} />
         </Container>
       </Layout>
     </main>
