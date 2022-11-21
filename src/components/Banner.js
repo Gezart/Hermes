@@ -3,7 +3,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Container from './Container'
 
 const Banner = ({title, content, image, bannerSize}) => {
-  console.log(title, image);
   const bannerImage = getImage(image?.localFile)
   return (
     <div className={`banner ${bannerSize}`}>
