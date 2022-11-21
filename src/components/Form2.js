@@ -5,7 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup';
 
 
-const Form2 = () => {
+const Form2 = ({pageTitle}) => {
     const initialValues = {
         name: "",
         email: "",
@@ -58,7 +58,7 @@ const Form2 = () => {
 
 
         const formData = new FormData();
-
+        formData.append("pageTitle", pageTitle);
         formData.append("name", values.name);
         formData.append("email", values.email);
         formData.append("phone", values.phone);

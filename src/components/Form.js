@@ -4,7 +4,7 @@ import axios from 'axios'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup';
 
-const FormComp = () => {
+const FormComp = ({pageTitle}) => {
     const initialValues = {
         vorname: "",
         email: "",
@@ -60,7 +60,7 @@ const FormComp = () => {
 
 
         const formData = new FormData();
-
+        formData.append("pageTitle", pageTitle);
         formData.append("vorname", values.vorname);
         formData.append("telNumber", values.telNumber);
         formData.append("email", values.email);

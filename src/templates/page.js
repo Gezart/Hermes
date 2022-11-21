@@ -22,7 +22,7 @@ const page = ({ pageContext: { page }, data }) => {
     return (
         <main className={`page page-${page.slug}`}>
             <Layout>
-                <Seo title="Home - Hermes" description="Hermes" keywords="Hermes" />
+                <Seo title={`${page.title} - Hermes`} description="Hermes" keywords="Hermes" />
                 <Banner {...banner} />
                 <Container>
                     <div className="page-content-wrapper">
@@ -38,9 +38,9 @@ const page = ({ pageContext: { page }, data }) => {
                                         case 'WpPage_Sections_Sections_Title':
                                             return <Title {...section} key={index} />
                                         case 'WpPage_Sections_Sections_Form':
-                                            return <FormComp {...section} key={index} />
+                                            return <FormComp {...section} key={index} pageTitle={page.title} />
                                         case 'WpPage_Sections_Sections_Form2':
-                                            return <Form2 {...section} key={index} />
+                                            return <Form2 {...section} key={index} pageTitle={page.title} />
                                         case 'WpPage_Sections_Sections_Image':
                                             return <Image {...section} key={index} />
                                         case 'WpPage_Sections_Sections_Button':
