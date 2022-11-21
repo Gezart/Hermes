@@ -14,7 +14,7 @@ const FormComp = () => {
         personenHaushalt: "",
         stockwerkJetzigerOrt: "",
         stockwerkNeuerOrt: "",
-        liftJetzigerOrt:"",
+        liftJetzigerOrt: "",
         liftNeuerUmzugsort: "",
         umzugsdatum: "",
         umzugVon: "",
@@ -27,7 +27,7 @@ const FormComp = () => {
         offerteErwünschtAls: "",
         message: "",
     };
-    
+
 
     const validationSchema = Yup.object({
         vorname: Yup.string().required("First name is required"),
@@ -51,7 +51,7 @@ const FormComp = () => {
         umzugsreinigung: Yup.string().required("Telefon number is required"),
         spezialisten: Yup.string().required("Telefon number is required"),
         offerteErwünschtAls: Yup.string().required("Telefon number is required"),
-        
+
         message: Yup.string().required("Message is required"),
     });
 
@@ -123,9 +123,9 @@ const FormComp = () => {
                                     <label htmlFor="umzugsart">Umzugsart:</label>
                                     <Field as="select" name="umzugsart" id="umzugsart">
                                         <option value="">Bitte wählen</option>
-                                        <option value="red">Red</option>
-                                        <option value="green">Green</option>
-                                        <option value="blue">Blue</option>
+                                        <option value="privatumzug">Privatumzug</option>
+                                        <option value="geschäftsumzug">Geschäftsumzug</option>
+                                        <option value="internationalUmzug">International Umzug</option>
                                     </Field>
                                     <ErrorMessage name="umzugsart" component={TextError} />
                                 </div>
@@ -135,9 +135,21 @@ const FormComp = () => {
                                     <label htmlFor="anzahlZimmer">Anzahl Zimmer:</label>
                                     <Field as="select" name="anzahlZimmer" id="anzahlZimmer">
                                         <option value="">Bitte wählen</option>
-                                        <option value="red">Red</option>
-                                        <option value="green">Green</option>
-                                        <option value="blue">Blue</option>
+                                        <option value="1">1 Zimmer</option>
+                                        <option value="1.5">1.5 Zimmer</option>
+                                        <option value="2">2 Zimmer</option>
+                                        <option value="2.5">2.5 Zimmer</option>
+                                        <option value="3">3 Zimmer</option>
+                                        <option value="3.5">3.5 Zimmer</option>
+                                        <option value="4">4 Zimmer</option>
+                                        <option value="4.5">4.5 Zimmer</option>
+                                        <option value="5">5 Zimmer</option>
+                                        <option value="5.5">5.5 Zimmer</option>
+                                        <option value="6">6 Zimmer</option>
+                                        <option value="loft">Loft</option>
+                                        <option value="einfamilienhaus"> Einfamilienhaus</option>
+                                        <option value="grossesHausVilla"> Grosses Haus / Villa</option>
+                                        <option value="geschäftshaus"> Geschäftshaus</option>
                                     </Field>
                                     <ErrorMessage name="anzahlZimmer" component={TextError} />
                                 </div>
@@ -145,43 +157,54 @@ const FormComp = () => {
                                     <label htmlFor="personenHaushalt">Personen Haushalt:</label>
                                     <Field as="select" name="personenHaushalt" id="personenHaushalt">
                                         <option value="">Bitte wählen</option>
-                                        <option value="red">Red</option>
-                                        <option value="green">Green</option>
-                                        <option value="blue">Blue</option>
+                                        <option value="1">1 Person</option>
+                                        <option value="2">2 Person</option>
+                                        <option value="3">3 Person</option>
+                                        <option value="4">4 Person</option>
+                                        <option value="5">5 Person</option>
                                     </Field>
                                     <ErrorMessage name="personenHaushalt" component={TextError} />
                                 </div>
-                            </div>                            
+                            </div>
                             <div className="two-side">
                                 <div className="form-data">
                                     <label htmlFor="stockwerkJetzigerOrt">Stockwerk Jetziger Ort:</label>
                                     <Field as="select" name="stockwerkJetzigerOrt" id="stockwerkJetzigerOrt">
-                                        <option value="">Bitte wählen</option>
-                                        <option value="red">Red</option>
-                                        <option value="green">Green</option>
-                                        <option value="blue">Blue</option>
+                                        <option value="">Parterre</option>
+                                        <option value="1">1. Stock</option>
+                                        <option value="2">2. Stock</option>
+                                        <option value="3">3. Stock</option>
+                                        <option value="4">4. Stock</option>
+                                        <option value="5">5. Stock</option>
+                                        <option value="6">6. Stock</option>
                                     </Field>
                                     <ErrorMessage name="stockwerkJetzigerOrt" component={TextError} />
                                 </div>
                                 <div className="form-data">
                                     <label htmlFor="stockwerkNeuerOrt">Stockwerk Neuer Ort:</label>
                                     <Field as="select" name="stockwerkNeuerOrt" id="stockwerkNeuerOrt">
-                                        <option value="">Bitte wählen</option>
-                                        <option value="red">Red</option>
-                                        <option value="green">Green</option>
-                                        <option value="blue">Blue</option>
+                                        <option value="">Parterre</option>
+                                        <option value="1">1. Stock</option>
+                                        <option value="2">2. Stock</option>
+                                        <option value="3">3. Stock</option>
+                                        <option value="4">4. Stock</option>
+                                        <option value="5">5. Stock</option>
+                                        <option value="6">6. Stock</option>
                                     </Field>
                                     <ErrorMessage name="stockwerkNeuerOrt" component={TextError} />
                                 </div>
-                            </div>   
+                            </div>
                             <div className="two-side">
                                 <div className="form-data">
                                     <label htmlFor="liftJetzigerOrt">Lift Jetziger Ort:</label>
                                     <Field as="select" name="liftJetzigerOrt" id="liftJetzigerOrt">
                                         <option value="">Bitte wählen</option>
-                                        <option value="red">Red</option>
-                                        <option value="green">Green</option>
-                                        <option value="blue">Blue</option>
+                                        <option value="keinLiftVorhanden">Kein Lift vorhanden</option>
+                                        <option value="4PersonenLift">4 Personen Lift</option>
+                                        <option value="5PersonenLift">5 Personen Lift</option>
+                                        <option value="8PersonenLift">8 Personen Lift</option>
+                                        <option value="warenlift">Warenlift</option>
+                                        <option value="mobelliftErwunscht">Möbellift erwünscht</option>
                                     </Field>
                                     <ErrorMessage name="liftJetzigerOrt" component={TextError} />
                                 </div>
@@ -189,25 +212,23 @@ const FormComp = () => {
                                     <label htmlFor="liftNeuerUmzugsort">Lift Neuer Umzugsort:</label>
                                     <Field as="select" name="liftNeuerUmzugsort" id="liftNeuerUmzugsort">
                                         <option value="">Bitte wählen</option>
-                                        <option value="red">Red</option>
-                                        <option value="green">Green</option>
-                                        <option value="blue">Blue</option>
+                                        <option value="keinLiftVorhanden">Kein Lift vorhanden</option>
+                                        <option value="4PersonenLift">4 Personen Lift</option>
+                                        <option value="5PersonenLift">5 Personen Lift</option>
+                                        <option value="8PersonenLift">8 Personen Lift</option>
+                                        <option value="warenlift">Warenlift</option>
+                                        <option value="mobelliftErwunscht">Möbellift erwünscht</option>
                                     </Field>
                                     <ErrorMessage name="liftNeuerUmzugsort" component={TextError} />
                                 </div>
-                            </div>   
+                            </div>
                             <div className="two-side">
                                 <div className="form-data">
                                     <label htmlFor="umzugsdatum">Umzugsdatum:</label>
-                                    <Field as="select" name="umzugsdatum" id="umzugsdatum">
-                                        <option value="">Bitte wählen</option>
-                                        <option value="red">Red</option>
-                                        <option value="green">Green</option>
-                                        <option value="blue">Blue</option>
-                                    </Field>
+                                    <Field type="date" name="umzugsdatum" id="umzugsdatum" />
                                     <ErrorMessage name="umzugsdatum" component={TextError} />
                                 </div>
-                            </div>  
+                            </div>
                             <div className="two-side">
                                 <div className="form-data">
                                     <label htmlFor="umzugVon">Umzug von: (jetzige Adresse)</label>
@@ -219,7 +240,7 @@ const FormComp = () => {
                                     <Field type="text" name="umzugNach" id="umzugNach" />
                                     <ErrorMessage name="umzugNach" component={TextError} />
                                 </div>
-                            </div>  
+                            </div>
                             <div className="form-data">
                                 <label htmlFor="vorname">Umzugsgut / bessondere Güter:</label>
                                 <p className='info'>Auflistung der besonderen Umzugsgüter wie Klavier, grosse Tischplatte, grosser Schrank, schwere Marmorplatte...Sowie eine einfache Auflistung Ihres gesamten Umzugsgutes.</p>
@@ -228,20 +249,18 @@ const FormComp = () => {
                                 <div className="form-data">
                                     <label htmlFor="kellerEstrich">Keller & Estrich:</label>
                                     <Field as="select" name="kellerEstrich" id="kellerEstrich">
-                                        <option value="">Bitte wählen</option>
-                                        <option value="red">Red</option>
-                                        <option value="green">Green</option>
-                                        <option value="blue">Blue</option>
+                                        <option value="keine">Keine</option>
+                                        <option value="kellerRäumen">Keller räumen</option>
+                                        <option value="estrichRaumen">Estrich räumen</option>
+                                        <option value="kellerUndEstrich">Keller und Estrich räumen</option>
                                     </Field>
                                     <ErrorMessage name="kellerEstrich" component={TextError} />
                                 </div>
                                 <div className="form-data">
                                     <label htmlFor="verpacken">Verpacken:</label>
                                     <Field as="select" name="verpacken" id="verpacken">
-                                        <option value="">Bitte wählen</option>
-                                        <option value="red">Red</option>
-                                        <option value="green">Green</option>
-                                        <option value="blue">Blue</option>
+                                        <option value="DasUmzugsgutWirdDurchUnsVerpackt">Das Umzugsgut wird durch uns verpackt</option>
+                                        <option value="DasUmzugsgutSollVonHermesVerpacktWerden">Das Umzugsgut soll von Hermes verpackt werden</option>
                                     </Field>
                                     <ErrorMessage name="verpacken" component={TextError} />
                                 </div>
@@ -250,20 +269,16 @@ const FormComp = () => {
                                 <div className="form-data">
                                     <label htmlFor="montage">De -und Montage:</label>
                                     <Field as="select" name="montage" id="montage">
-                                        <option value="">Bitte wählen</option>
-                                        <option value="red">Red</option>
-                                        <option value="green">Green</option>
-                                        <option value="blue">Blue</option>
+                                        <option value="DeBZWMontageDerMöbelErfolgtDurchMich.">De- bzw. Montage der Möbel erfolgt durch mich</option>
+                                        <option value="DeBZWMontageDerMöbelSollDurchHermesErfolgen">De- bzw. Montage der Möbel soll durch Hermes erfolgen.</option>
                                     </Field>
                                     <ErrorMessage name="montage" component={TextError} />
                                 </div>
                                 <div className="form-data">
                                     <label htmlFor="umzugsreinigung">Umzugsreinigung::</label>
                                     <Field as="select" name="umzugsreinigung" id="umzugsreinigung">
-                                        <option value="">Bitte wählen</option>
-                                        <option value="red">Red</option>
-                                        <option value="green">Green</option>
-                                        <option value="blue">Blue</option>
+                                        <option value="BitteUmKostenloseOfferteFürMeinUmzugsreinigung">Bitte um kostenlose Offerte für mein Umzugsreinigung</option>
+                                        <option value="DieUmzugsreinigungUbernehmeIchSelbs">Die Umzugsreinigung übernehme ich selbs</option>
                                     </Field>
                                     <ErrorMessage name="umzugsreinigung" component={TextError} />
                                 </div>
@@ -272,10 +287,10 @@ const FormComp = () => {
                                 <div className="form-data">
                                     <label htmlFor="spezialisten">Spezialisten:</label>
                                     <Field as="select" name="spezialisten" id="spezialisten">
-                                        <option value="">Bitte wählen</option>
-                                        <option value="red">Red</option>
-                                        <option value="green">Green</option>
-                                        <option value="blue">Blue</option>
+                                        <option value="keine">Keine</option>
+                                        <option value="SchreinerErwünscht">Schreiner erwünscht</option>
+                                        <option value="ElektrikerErwünscht">Elektriker erwünscht</option>
+                                        <option value="MalerErwünscht">Maler erwünscht (bitte um gratis Offerte)</option>
                                     </Field>
                                     <ErrorMessage name="spezialisten" component={TextError} />
                                 </div>
@@ -285,7 +300,7 @@ const FormComp = () => {
                                     <ErrorMessage name="offerteErwünschtAls" component={TextError} />
                                 </div>
                             </div>
-                            
+
                             <div className="form-data">
                                 <label htmlFor="message">Ev. Mitteilung an uns:</label>
                                 <Field as="textarea" rows={5} name="message" id="message" />
