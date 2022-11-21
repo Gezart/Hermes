@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import '../../Assets/css/main.css'
 import Banner from '../components/Banner';
-// import ColoredBanner from '../components/ColoredBanner';
+import ColoredBanner from '../components/ColoredBanner';
 import Layout from '../components/Layout';
 import Text from '../components/Text';
 import Seo from "../components/Seo";
@@ -55,7 +55,7 @@ export default function Home({ data }) {
               <Posts posts={allPosts} title={"Interessante Beiträge"} />
             </div>
           </div>
-          {/* <ColoredBanner bannerWithColor={homeOption.bannerWithColor} /> */}
+          <ColoredBanner bannerWithColor={homeOption.bannerWithColor} />
           <SubtitleWithText />
         </Container>
       </Layout>
