@@ -22,6 +22,7 @@ export default function Home({ data }) {
   let themeOption = data?.allWp?.nodes[0].acfOptionsThemeOption.themeOptions
   let sections = data.wpPage.sections.sections
   let banner = data.wpPage.sections.banner
+  console.log('>>>>>>>>>>>', homeOption)
   return (
     <main className="home">
       <Layout>
