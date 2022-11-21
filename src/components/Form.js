@@ -265,23 +265,21 @@ const FormComp = () => {
                                     <ErrorMessage name="verpacken" component={TextError} />
                                 </div>
                             </div>
-                            <div className="two-side">
-                                <div className="form-data">
-                                    <label htmlFor="montage">De -und Montage:</label>
-                                    <Field as="select" name="montage" id="montage">
-                                        <option value="DeBZWMontageDerMöbelErfolgtDurchMich.">De- bzw. Montage der Möbel erfolgt durch mich</option>
-                                        <option value="DeBZWMontageDerMöbelSollDurchHermesErfolgen">De- bzw. Montage der Möbel soll durch Hermes erfolgen.</option>
-                                    </Field>
-                                    <ErrorMessage name="montage" component={TextError} />
-                                </div>
-                                <div className="form-data">
-                                    <label htmlFor="umzugsreinigung">Umzugsreinigung::</label>
-                                    <Field as="select" name="umzugsreinigung" id="umzugsreinigung">
-                                        <option value="BitteUmKostenloseOfferteFürMeinUmzugsreinigung">Bitte um kostenlose Offerte für mein Umzugsreinigung</option>
-                                        <option value="DieUmzugsreinigungUbernehmeIchSelbs">Die Umzugsreinigung übernehme ich selbs</option>
-                                    </Field>
-                                    <ErrorMessage name="umzugsreinigung" component={TextError} />
-                                </div>
+                            <div className="form-data">
+                                <label htmlFor="montage">De -und Montage:</label>
+                                <Field as="select" name="montage" id="montage">
+                                    <option value="DeBZWMontageDerMöbelErfolgtDurchMich.">De- bzw. Montage der Möbel erfolgt durch mich</option>
+                                    <option value="DeBZWMontageDerMöbelSollDurchHermesErfolgen">De- bzw. Montage der Möbel soll durch Hermes erfolgen.</option>
+                                </Field>
+                                <ErrorMessage name="montage" component={TextError} />
+                            </div>
+                            <div className="form-data">
+                                <label htmlFor="umzugsreinigung">Umzugsreinigung:</label>
+                                <Field as="select" name="umzugsreinigung" id="umzugsreinigung">
+                                    <option value="BitteUmKostenloseOfferteFürMeinUmzugsreinigung">Bitte um kostenlose Offerte für mein Umzugsreinigung</option>
+                                    <option value="DieUmzugsreinigungUbernehmeIchSelbs">Die Umzugsreinigung übernehme ich selbs</option>
+                                </Field>
+                                <ErrorMessage name="umzugsreinigung" component={TextError} />
                             </div>
                             <div className="two-side">
                                 <div className="form-data">
