@@ -88,7 +88,7 @@ const Header = ({setIsActive,isActive}) => {
       <Container>
         <div className="menu">
           <div className="logo" onClick={() => setIsActive("")}>
-            <Link to={`/`}>
+            <Link className={`${isOpen ? "absolute" : ""}`} to={`/`}>
               <img src={LogoBlock} alt="" />
             </Link>
             <svg className="menu-toggler" onClick={() => {

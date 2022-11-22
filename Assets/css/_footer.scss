@@ -89,10 +89,29 @@
             margin-right: 16px;
             path{
                 transition: 0.4s;
+                fill: #9CA3AF;
             }
             &:hover{
                 path{
                     fill: $firstColor;
+                }
+            }
+        }
+        a{
+            &:last-child{
+                svg{
+                    path{
+                        fill: none;
+                    }
+                }
+            }
+            &:hover{
+                &:last-child{
+                    svg{
+                        path{
+                            stroke: $firstColor;
+                        }
+                    }
                 }
             }
         }

@@ -1,3 +1,15 @@
-.text{
+.text {
       @include text;
+}
+
+.page-impressum, .page-datenschutz {
+      .page-content-wrapper{
+            grid-template-columns: 1fr;
+            a{
+                  color: $firstColor;
+            }
+      }
+      .posts {
+            display: none;
+      }
 }
