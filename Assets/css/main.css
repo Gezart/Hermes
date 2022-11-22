@@ -647,7 +647,7 @@ body.hidden {
 }
 
 .plain-text.single-item .item .image, .plain-text.single-item .item .gatsby-image-wrapper {
-  width: 200px !important;
+  width: 200px;
 }
 
 @media (min-width: 767px) {
@@ -656,6 +656,9 @@ body.hidden {
     display: grid;
     -ms-grid-columns: 280px calc(100% - 315px);
         grid-template-columns: 280px calc(100% - 315px);
+  }
+  .plain-text.single-item .item .image, .plain-text.single-item .item .gatsby-image-wrapper {
+    width: 300px;
   }
 }
 
