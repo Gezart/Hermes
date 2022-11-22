@@ -59,3 +59,18 @@
         }
     }
 }
+.plain-text.single-item{
+    margin-bottom: 50px;
+    @media (min-width: 991px){
+        margin-bottom: 100px;        
+    }
+    .item{
+        .image, .gatsby-image-wrapper{
+            width: 200px;
+        }
+        @media (min-width: 767px){
+            display: grid;
+            grid-template-columns: 200px calc(100% - 235px);
+        }
+    }
+} 

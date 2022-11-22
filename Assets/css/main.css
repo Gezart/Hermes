@@ -636,6 +636,29 @@ body.hidden {
   line-height: 24px;
 }
 
+.plain-text.single-item {
+  margin-bottom: 50px;
+}
+
+@media (min-width: 991px) {
+  .plain-text.single-item {
+    margin-bottom: 100px;
+  }
+}
+
+.plain-text.single-item .item .image, .plain-text.single-item .item .gatsby-image-wrapper {
+  width: 200px;
+}
+
+@media (min-width: 767px) {
+  .plain-text.single-item .item {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 200px calc(100% - 235px);
+        grid-template-columns: 200px calc(100% - 235px);
+  }
+}
+
 .coloredBanner {
   position: relative;
   background-color: #EF8000;

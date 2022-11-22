@@ -58,6 +58,7 @@ export default function Home({ data }) {
           </div>
           <ColoredBanner bannerWithColor={homeOption.bannerWithColor} />
           <TextWrapper textWrapper={homeOption.subtitleWithText} />
+          <PlainText plainText={homeOption.plainText} extraClass="single-item"/>
         </Container>
       </Layout>
     </main>
@@ -177,6 +178,22 @@ export const data = graphql`
             offersIcon
             offersTitle
             offersContent
+          }
+          plainText {
+            title
+            subtitle
+            content
+            image {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    layout: FIXED
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
+              }
+            }
           }
         }
       }

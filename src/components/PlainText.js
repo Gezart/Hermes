@@ -1,9 +1,9 @@
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react'
 
-const PlainText = ({ plainText }) => {
+const PlainText = ({ plainText, extraClass }) => {
     return (
-        <div className="plain-text">
+        <div className={`plain-text ${extraClass}`}>
             {
                 plainText.map((item, index) =>
                     <div className="item" key={index}>
