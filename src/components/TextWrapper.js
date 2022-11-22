@@ -1,8 +1,11 @@
 import React from 'react'
 
-const TextWrapper = () => {
+const TextWrapper = ({textWrapper}) => {
   return (
-    <div>TextWrapper</div>
+    <div className='subtitle-with-text'>
+      <h3>{textWrapper.theSubtitle}</h3>
+      <div dangerouslySetInnerHTML = {{ __html : theContent }}> </div>
+    </div>
   )
 }
 
