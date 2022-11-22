@@ -654,8 +654,8 @@ body.hidden {
   .plain-text.single-item .item {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 200px calc(100% - 235px);
-        grid-template-columns: 200px calc(100% - 235px);
+    -ms-grid-columns: 280px calc(100% - 315px);
+        grid-template-columns: 280px calc(100% - 315px);
   }
 }
 
