@@ -170,8 +170,8 @@ export const data = graphql`
             }
           }
           subtitleWithText {
-            theSubtitle
-            theContent
+            title
+            content
           }
           offers {
             offersIcon
