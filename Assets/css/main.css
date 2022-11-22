@@ -647,7 +647,7 @@ body.hidden {
 }
 
 .plain-text.single-item .item .image, .plain-text.single-item .item .gatsby-image-wrapper {
-  width: 200px;
+  width: 200px !important;
 }
 
 @media (min-width: 767px) {
