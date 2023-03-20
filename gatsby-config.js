@@ -20,7 +20,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: process.env.GATSBY_WPGRAPHQL_URL || "http://admin.hermes-umzug.ch/graphql",
+        url: process.env.GATSBY_WPGRAPHQL_URL,
       },
     },
     'gatsby-transformer-sharp',
